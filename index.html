@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{name}}</p>
+        <p k-text='name'></p>
+        <p>{{age}}</p>
+        <input type="text" k-model="name">
+        <button @click="changeName">点我</button>
+        <div k-html="buttonStr"></div>
+    </div>
+    <script src="./kaikeba-vue.js"></script>
+    <script src="./kaikeba-compile.js"></script>
+    <script>
+        let vm = new KVue({
+            el:'#app',
+            data:{
+                name:'kkb',
+                age:5,
+                buttonStr:'<button>heilll</button>'
+            },
+            methods: {
+                changeName(){
+                    this.name = '开课吧change'
+                }
+            },
+        })
+    </script>
+</body>
+</html>

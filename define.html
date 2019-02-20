@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>你好！<span id="name">Hello kkb</span></p>
+    </div>
+    <script>
+      const obj = {}
+      Object.defineProperty(obj,"names",{
+          get(){
+              //obj.name  会执行get方法
+              console.log("get obj.name")
+              return document.getElementById("name").innerHTML
+          },
+          set(names){
+              //obj.name = "xx" 会执行set()方法
+              console.log('set obj.name=xx')
+              return document.getElementById('name').innerHTML = names
+          }
+      })
+    </script>
+</body>
+</html>
